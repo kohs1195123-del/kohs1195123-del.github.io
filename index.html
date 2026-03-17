@@ -2,9 +2,9 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<title>Dev Archive</title>
+<title>Dev Notes</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
 
@@ -15,220 +15,207 @@ box-sizing:border-box;
 }
 
 body{
-font-family:"Space Grotesk",sans-serif;
-background:#f3f1ed;
-color:#111;
+font-family:"Inter",sans-serif;
+background:#0d0d0f;
+color:#e6e6e6;
+line-height:1.6;
+}
+
+/* container */
+
+.container{
+max-width:1100px;
+margin:auto;
+padding:40px 20px;
+}
+
+/* navbar */
+
+.navbar{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:80px;
+}
+
+.logo{
+font-weight:600;
+font-size:20px;
+}
+
+.nav{
+display:flex;
+gap:25px;
+font-size:14px;
+color:#aaa;
+}
+
+.nav a{
+color:#aaa;
+text-decoration:none;
+}
+
+.nav a:hover{
+color:white;
+}
+
+/* hero */
+
+.hero{
+margin-bottom:80px;
+}
+
+.hero h1{
+font-size:48px;
+font-weight:600;
+margin-bottom:15px;
+}
+
+.hero p{
+color:#9b9b9b;
+max-width:600px;
 }
 
 /* layout */
 
-.wrapper{
+.layout{
 display:grid;
-grid-template-columns:280px 1fr;
-max-width:1400px;
-margin:auto;
-gap:70px;
-padding:70px 40px;
+grid-template-columns:260px 1fr;
+gap:60px;
 }
 
-/* sidebar */
-
-.sidebar{
-position:sticky;
-top:60px;
-height:fit-content;
-}
-
-/* profile card */
+/* profile */
 
 .profile{
-background:#fff;
-border:4px solid black;
-padding:30px;
-position:relative;
-}
-
-.profile::before{
-content:"";
-position:absolute;
-top:-10px;
-left:-10px;
-width:100%;
-height:100%;
-background:#00d9ff;
-z-index:-1;
+border:1px solid #2a2a2a;
+padding:25px;
+border-radius:8px;
+background:#111;
 }
 
 .profile img{
-width:90px;
+width:70px;
 border-radius:50%;
 margin-bottom:15px;
 }
 
-.profile h2{
-font-size:24px;
-margin-bottom:6px;
+.profile h3{
+margin-bottom:5px;
 }
 
 .profile p{
 font-size:14px;
-color:#444;
-line-height:1.6;
+color:#aaa;
 }
-
-/* stack */
 
 .stack{
 margin-top:15px;
 }
 
 .stack span{
-display:inline-block;
-border:2px solid black;
-padding:4px 10px;
 font-size:12px;
-margin:3px;
-background:#ffd60a;
+padding:4px 8px;
+border:1px solid #333;
+border-radius:5px;
+margin-right:5px;
+color:#bbb;
 }
 
-/* hero */
-
-.hero{
-margin-bottom:60px;
-}
-
-.hero h1{
-font-size:90px;
-line-height:0.9;
-font-weight:700;
-}
-
-.hero .accent{
-color:#ff2e63;
-}
-
-.hero p{
-margin-top:15px;
-font-size:18px;
-color:#555;
-}
-
-/* grid posts */
+/* posts */
 
 .posts{
-display:grid;
-grid-template-columns:repeat(2,1fr);
-gap:30px;
+display:flex;
+flex-direction:column;
+gap:28px;
 }
 
-/* post card */
+/* post */
 
 .post{
-border:3px solid black;
-background:white;
-padding:28px;
-position:relative;
-transition:.2s;
-}
-
-.post:nth-child(odd)::after{
-background:#ff2e63;
-}
-
-.post:nth-child(even)::after{
-background:#00d9ff;
-}
-
-.post::after{
-content:"";
-position:absolute;
-top:10px;
-left:10px;
-width:100%;
-height:100%;
-z-index:-1;
+padding-bottom:25px;
+border-bottom:1px solid #222;
+cursor:pointer;
+transition:0.15s;
 }
 
 .post:hover{
-transform:rotate(-1deg) translate(-5px,-5px);
+transform:translateX(6px);
 }
 
-.post h3{
-font-size:22px;
-margin-bottom:10px;
+.post h2{
+font-size:20px;
+margin-bottom:5px;
 }
 
 .post p{
 font-size:14px;
-color:#555;
-margin-bottom:15px;
+color:#9a9a9a;
+margin-bottom:6px;
 }
 
 .meta{
 font-size:12px;
-color:#888;
-}
-
-/* featured big card */
-
-.featured{
-grid-column:span 2;
-background:#111;
-color:white;
-padding:40px;
-border:4px solid black;
-position:relative;
-}
-
-.featured::after{
-content:"";
-position:absolute;
-top:12px;
-left:12px;
-width:100%;
-height:100%;
-background:#ffd60a;
-z-index:-1;
-}
-
-.featured h2{
-font-size:34px;
-margin-bottom:10px;
-}
-
-.featured p{
-color:#ddd;
+color:#6b6b6b;
 }
 
 /* footer */
 
 footer{
-margin-top:80px;
+margin-top:100px;
 text-align:center;
 font-size:13px;
 color:#666;
 }
 
 </style>
+
 </head>
 
 <body>
 
-<div class="wrapper">
+<div class="container">
 
-<!-- sidebar -->
+<!-- navbar -->
 
-<aside class="sidebar">
+<div class="navbar">
 
-<div class="profile">
+<div class="logo">devnotes</div>
+
+<div class="nav">
+<a href="#">Blog</a>
+<a href="#">Projects</a>
+<a href="#">Notes</a>
+<a href="#">Github</a>
+</div>
+
+</div>
+
+<!-- hero -->
+
+<section class="hero">
+
+<h1>Backend Engineering Notes</h1>
+
+<p>
+Java와 Database 중심으로 백엔드 개발을 공부하며
+문제 해결 과정과 아키텍처를 기록하는 개발 블로그.
+</p>
+
+</section>
+
+<div class="layout">
+
+<!-- profile -->
+
+<aside class="profile">
 
 <img src="profile.png">
 
-<h2>Backend Dev</h2>
+<h3>Backend Dev</h3>
 
 <p>
-Java 기반 백엔드 개발을 하며  
-문제 해결 과정과 아키텍처를 기록하는 개발 로그
+Java 기반 백엔드 개발자.  
+JDBC, DB 구조, 아키텍처를 공부하며 기록합니다.
 </p>
 
 <div class="stack">
@@ -238,77 +225,79 @@ Java 기반 백엔드 개발을 하며
 <span>Backend</span>
 </div>
 
-</div>
-
 </aside>
 
-<!-- main -->
-
-<main>
-
-<section class="hero">
-
-<h1>
-DEV<br>
-<span class="accent">ARCHIVE</span>
-</h1>
-
-<p>
-문제 해결과 아키텍처를 기록하는 백엔드 개발 블로그
-</p>
-
-</section>
+<!-- posts -->
 
 <section class="posts">
 
-<div class="featured">
-<h2>JDBC 내부 동작 구조 완벽 이해</h2>
+<div class="post">
+
+<h2>JDBC 내부 동작 구조 이해하기</h2>
+
 <p>
-Driver → Connection → Statement → ResultSet
-JDBC가 실제로 동작하는 구조를 코드와 함께 분석했다.
+Driver, Connection, Statement, ResultSet 흐름을 코드로 분석.
 </p>
-<div class="meta">2026.03.17 · Deep Dive</div>
+
+<div class="meta">Mar 17 · Backend</div>
+
 </div>
 
 <div class="post">
-<h3>SQLException 디버깅 전략</h3>
+
+<h2>SQLException 디버깅 전략</h2>
+
 <p>
-에러 메시지를 기반으로 문제의 원인을 찾는 실무 방법.
+에러 메시지 기반으로 문제의 원인을 찾는 방법.
 </p>
-<div class="meta">2026.03.16</div>
+
+<div class="meta">Mar 16 · Debugging</div>
+
 </div>
 
 <div class="post">
-<h3>DAO 패턴 적용하기</h3>
+
+<h2>DAO 패턴 적용하기</h2>
+
 <p>
-JDBC 코드 구조 개선을 위한 DAO 패턴 정리.
+JDBC 코드 구조를 개선하는 실무 패턴.
 </p>
-<div class="meta">2026.03.15</div>
+
+<div class="meta">Mar 15 · Architecture</div>
+
 </div>
 
 <div class="post">
-<h3>MySQL Index 성능 테스트</h3>
+
+<h2>MySQL Index 성능 테스트</h2>
+
 <p>
-Index 전후 Query 속도 비교 실험.
+Index 전후 Query 속도 차이 실험.
 </p>
-<div class="meta">2026.03.14</div>
+
+<div class="meta">Mar 14 · Database</div>
+
 </div>
 
 <div class="post">
-<h3>Connection Pool 왜 필요할까</h3>
+
+<h2>Connection Pool이 필요한 이유</h2>
+
 <p>
-DB Connection 생성 비용과 해결 방법.
+DB Connection 비용과 성능 최적화.
 </p>
-<div class="meta">2026.03.13</div>
+
+<div class="meta">Mar 13 · Backend</div>
+
 </div>
 
 </section>
 
-<footer>
-© 2026 Dev Archive
-</footer>
+</div>
 
-</main>
+<footer>
+© 2026 DevNotes
+</footer>
 
 </div>
 
